@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+    <title>hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all" href="../../webapp/css/hileafstyle.css" th:href="@{/css/hileafstyle.css}"/>
+    <script type="text/javascript" src="../../webapp/js/hileaf.js" th:src="@{/js/hileaf.js}"></script>
+     <style>
+        h2{
+            text-decoration: underline;
+            font-size:0.9em;
+            color:gray;
+        }
+    </style> 
+</head>
+<body>
+	<div class="showing">
+		<h2>显示 转义和非转义的 html 文本</h2>
+		<p th:text="${htmlnote}" ></p>
+		<p th:utext="${htmlnote}" ></p>
+	</div>
+ 
+	<div class="showing">
+		<h2>显示对象以及对象属性</h2>
+		<p th:text="${tree}" ></p>
+		<p th:text="${tree.name}" ></p>
+		<p th:text="${tree.getName()}" ></p>
+	</div>
+ 
+	<div class="showing" th:object="${tree}">
+		<h2>*{}方式显示属性</h2>
+		<p th:text="*{name}" ></p>
+	</div>
+ 
+	<div class="showing">
+		<h2>算数运算</h2>
+		<p th:text="${tree.heigh+9}" ></p>
+	</div>
+</body>
+</html>

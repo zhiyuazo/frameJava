@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+    <title>hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all" href="../../webapp/css/hileafstyle.css" th:href="@{/css/hileafstyle.css}"/>
+    <script type="text/javascript" src="../../webapp/js/hileaf.js" th:src="@{/js/hileaf.js}"></script>
+	<style>
+        h2{
+            text-decoration: underline;
+            font-size:0.9em;
+            color:gray;
+        }
+    </style>        
+</head>
+<body>
+	<div class="showing">
+		<h2>条件判断</h2>
+		<p th:if="${flag}" >如果flag 是 true ，本句话就会显示</p>
+		<p th:if="${not flag}" >取反 ，所以如果flag 是 true ，本句话就不会显示</p>
+		<p th:unless="${flag}" >unless 等同于上一句，所以如果flag 是 true ，本句话就不会显示</p>
+		<p th:text="   ${flag}? '当flag为真的时候，显示本句话，这是用三相表达式做的' : 'flag=false' " ></p>
+	</div>
+</body>
+</html>

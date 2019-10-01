@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>test3</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" media="all" href="css/mine/style.js" th:href="@{css/mine/style.css}"/>
+<script type="text/javascript" src="js/mine/mythymleaf.js" th:src="@{js/mine/mythymleaf.js}"></script>
+<script>
+</script>
+
+</head>
+<body>
+
+<div class="showing">
+    <h2>遍历</h2>
+ 
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>产品名称</th>
+                <th>价格</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:class="${status.even?'even':'odd'}"  th:each="p,status: ${ps}">
+                <td th:text="${status.index}"></td>
+                <td th:text="${p.id}"></td>
+                <td th:text="${p.name}"></td>
+                <td th:text="${p.price}"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+   <select size="3">
+        <option th:each="p:${ps}" th:value="${p.id}"     th:selected="${p.id==currentProduct.id}"    th:text="${p.name}" ></option>
+    </select>
+
+<input name="product" type="radio" th:each="p:${ps}" th:value="${p.id}"  th:checked="${p.id==currentProduct.id}"     th:text="${p.name}"  />
+ 
+
+</body>
+</html>

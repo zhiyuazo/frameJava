@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">  
+<title>getmany</title>
+<script type="text/javascript" src="js/jquery.min.js"></script>  
+</head>
+<body>
+	<input type="button" value="通过AJAX获取多个Book对象---" id="sender">  
+    <div id="messageDiv"></div> 
+    <script> 
+    $('#sender').click(function(){ 
+        var url="bookjson"; 
+        $.get(
+			url,
+			function(data) {
+				 console.log(data);
+				 var books = data;
+				 console.log(books.length);
+				 for(i in books){
+					 var old=$("#messageDiv").html(); 
+					 var b = books[i];
+					 $("#messageDiv").html(old + "<br>" + b.id + "----" + b.name);
+				 }
+			 });  
+    }); 
+    </script>  
+</body>
+</html>

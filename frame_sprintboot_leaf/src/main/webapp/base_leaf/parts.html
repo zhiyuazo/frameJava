@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+    <title>hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<footer th:fragment="footer1"> 
+	   <p >All Rights Reserved</p>
+	</footer>
+	<footer th:fragment="footer2(start,now)" border="1"> 
+	   <p th:text="|${start} - ${now} All Rights Reserved|"></p>
+	</footer>
+</body>
+</html>

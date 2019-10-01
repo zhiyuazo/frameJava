@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+      <package name="bean"/>
+    </typeAliases>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/how2java?characterEncoding=UTF-8&amp;allowMultiQueries=true"/>
+                <property name="username" value="root"/>
+                <property name="password" value="admin"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+    <!-- 
+        <mapper resource="bean/Product.xml"/>
+        <mapper resource="bean/OrderProducts.xml"/>
+        <mapper resource="bean/Order.xml"/>
+     -->
+        <mapper resource="bean/Category.xml"/>
+    <!-- 
+        <mapper class="mapper.CategoryMapper"/>
+        <mapper class="mapper.ProductMapper"/>
+        <mapper class="mapper.OrderMapper"/>
+        <mapper class="mapper.OrderProductsMapper"/>
+     -->
+    </mappers>
+</configuration>

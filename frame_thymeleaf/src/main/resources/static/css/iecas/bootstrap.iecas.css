@@ -1,0 +1,18 @@
+.table-hover>tbody>tr:hover>td, .table-hover>tbody>tr:hover>th{
+	background-color:#f78a09
+}
+
+.table-striped>tbody>tr:nth-of-type(odd){
+	background-color:#333333
+}
+.table-striped>tbody>tr:nth-of-type(even){
+	background-color:#354046
+}
+
+.table-striped>tbody>tr select:nth-of-type(odd){
+	background-color:#333333
+}
+
+.table-striped>tbody>tr select:nth-of-type(even){
+	background-color:#354046
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+    <title>hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all" href="../../webapp/css/hileafstyle.css" th:href="@{/css/hileafstyle.css}"/>
+    <script type="text/javascript" src="../../webapp/js/hileaf.js" th:src="@{/js/hileaf.js}"></script>
+     <style>
+        h2{
+            text-decoration: underline;
+            font-size:0.9em;
+            color:gray;
+        }
+    </style> 
+</head>
+<body>
+	<div class="showing">
+		<h2>格式化日期</h2>
+		------------<br/>
+		直接输出日期 ${now}:
+		<p th:text="${now}"></p>
+		------------<br/>
+		默认格式化 ${#dates.format(now)}:
+		<p th:text="${#dates.format(now)}"></p>
+		------------<br/>
+		自定义格式化 ${#dates.format(now,'yyyy-MM-dd HH:mm:ss')}:
+		<p th:text="${#dates.format(now,'yyyy-MM-dd HH:mm:ss')}"></p>	
+	</div>
+</body>
+</html>

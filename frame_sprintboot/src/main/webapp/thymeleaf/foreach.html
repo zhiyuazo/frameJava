@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+    <title>hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all" href="../../webapp/css/hileafstyle.css" th:href="@{/css/hileafstyle.css}"/>
+    <script type="text/javascript" src="../../webapp/js/hileaf.js" th:src="@{/js/hileaf.js}"></script>
+	<style>
+        h2{
+            text-decoration: underline;
+            font-size:0.9em;
+            color:gray;
+        }
+    </style>        
+</head>
+<body>
+	<div class="showing"  >
+		<h2>normal-forearch</h2>
+		<table>
+			<thead>
+				<tr><th>id</th><th>产品名称</th><th>价格</th></tr>
+			</thead>
+			<tbody>
+				<tr th:each="t: ${treels}">
+					<td  th:text="${t.id}"></td>
+					<td  th:text="${t.name}"></td>
+					<td  th:text="${t.heigh}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="showing" >
+		<h2>with-status-forearch</h2>
+		<table>
+			<thead>
+				<tr><th>index</th><th>id</th><th>产品名称</th><th>价格</th></tr>
+			</thead>
+			<tbody>
+				<tr th:class="${status.even}?'even':'odd'" th:each="t,status: ${treels}">
+					<td th:text="${status.index}"></td>
+					<td th:text="${t.id}"></td>
+					<td  th:text="${t.name}"></td>
+					<td  th:text="${t.heigh}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+	<div class="showing" >
+		<h2>with-SELECT-forearch</h2>
+		<select size="1">
+			<option th:each="t:${treels}" 
+			  		th:value="${t.id}" 
+			  		th:selected="${t.id==3}" 
+			  		th:text="${t.name}">
+			</option>
+		</select>
+	</div>
+	
+	<div class="showing" >
+		<h2>with-radio-forearch</h2>
+		<input name="tree" type="radio" 
+			   th:each="t:${treels}" 
+			   th:value="${t.id}"  
+			   th:checked="${t.id==2}"  
+			   th:text="${t.name}"  />
+	</div>
+</body>
+</html>

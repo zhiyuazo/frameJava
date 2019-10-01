@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>test1</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" media="all" href="css/mine/style.js" th:href="@{css/mine/style.css}"/>
+<script type="text/javascript" src="js/mine/mythymleaf.js" th:src="@{js/mine/mythymleaf.js}"></script>
+<script>
+//testFunction();
+</script>
+
+</head>
+<body>
+    <p th:if="${testBoolean}" >如果testBoolean 是 true ，本句话就会显示</p>
+    <p th:if="${not testBoolean}" >取反 ，所以如果testBoolean 是 true ，本句话就不会显示</p>
+	<p th:unless="${testBoolean}" >unless 等同于上一句，所以如果testBoolean 是 true ，本句话就不会显示</p>
+	<p th:text="${testBoolean}?'当testBoolean为真的时候，显示本句话，这是用三相表达式做的':''" ></p>
+	
+	<div class="showing">
+		<p class="even" th:text="${now}" >now</p>
+		<p class="odd" th:text="${name}" >name</p>
+		<p class="even" th:text="'Hello！ ' + ${name} + '!'" >hello world</p>
+		<p class="odd" th:text="|Hello！ ${name}!|" >hello world</p>
+	</div>
+	
+    <div  th:replace="footer::footer1"></div>
+    <div  th:replace="footer::footer2(2015,2018)"></div>
+    
+</body>
+</html>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+   
+    <mapper namespace="trytest.thymeleaf.mapper.CarMapper">
+        
+        <insert id="add" parameterType="Car" >
+            insert into car_ ( name,hp) values (#{name},#{hp})  
+        </insert>
+          
+        <delete id="delete" parameterType="Car" >
+            delete from car_ where id= #{id} 
+        </delete>
+          
+        <select id="get" parameterType="_int" resultType="Car">
+            select * from   car_  where id= #{id}  
+        </select>
+  
+        <update id="update" parameterType="Car" >
+            update car_ set name=#{name}, hp = #{hp} where id=#{id}  
+        </update>
+        
+        <select id="list" resultType="Car">
+            select * from car_    
+        </select> 
+        
+    </mapper>
