@@ -11,6 +11,7 @@
 *.war
 */img/
 *.jpg
+*.zip
 */.git/
 */logs
 */logs/*
